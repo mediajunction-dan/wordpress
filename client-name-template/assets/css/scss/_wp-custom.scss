@@ -1,0 +1,292 @@
+// CUSTOM UTILITIES
+// -------------------------
+// Body Font Resize
+body {
+	@include media(screen-sm) {font-size:14px !important;}
+	@include media(screen-md) {font-size:15px !important;}
+	@include media(screen-lg) {font-size:16px !important;}
+}
+
+.left-column {
+	@include media(screen-sm) {padding-right:3%;}	
+}
+.right-column {
+	@include media(screen-sm) {padding-left:3%;}
+}
+.vert-content {
+	width:100%; display:table; position:relative; z-index:1;
+}
+.vert-content-inner {
+	display:table-cell; padding:0; vertical-align:middle;
+}
+img {
+	&.alignLeft {margin:0 1.5em 1.5em 0;}
+	&.alignRight {margin:0 0 1.5em 1.5em;}
+}
+
+// LINKS & BUTTONS
+// -------------------------
+
+
+// STRUCTURE
+// -------------------------
+.wrap {}
+
+// HEADER
+// -------------------------
+
+// Site Header
+$site-header-height: 50px;
+.site-header {
+	width:100%; height:$site-header-height;
+
+	/* Logo styling */	
+	a.brand {
+		// Width of logo width:; 
+		display:block; height:$site-header-height; line-height:$site-header-height; vertical-align:middle;
+		img {display:inline; max-width:100%;}
+	}
+	
+	/* Menu */
+	nav {
+		font-size:14px; // Responsive text resizing
+		// General link styles
+		 a {
+		 	color:$brand-primary; font-size:1.063em; font-weight:400; text-decoration:none; display:block;
+			 &:hover {color:$gray;}
+		 }
+	 	// List reset
+		ul {
+			list-style:none; display:block; margin:0; padding:0;
+		}
+		// Top level list
+		& > ul {
+			text-align:left;
+			& > li {
+				display:inline-block; padding:0; margin:0; float:none !important;
+				// Top level links
+				& > a {
+					padding:0 1em; line-height:$site-header-height;
+				}
+				// Hover keeps top level style when user is hovering on drop down links
+				&:hover > a, & > a:hover {
+					color:$gray;
+				}
+				&:last-child {
+					& > a {border-right:none;}
+				}
+			}
+		}
+		// Drop down list
+		ul ul {
+			background-color:#fff;
+			li {
+				background:$gray-lighter;
+				a {
+					border-bottom:1px solid $gray-light;
+					color:$brand-primary; font-size:.875em;
+				}
+				&:hover > a,
+				a:hover {background-color:$gray-light;}
+			}
+		}
+		.active > a {color:$gray;}
+		 
+		 
+	}	
+	
+	nav {display:none; visibility:hidden;}
+	
+	@include media(screen-md) {
+		nav {display:block; visibility:visible;}
+	}
+	
+}
+// Responsive Toggle
+.menu-trigger {	
+	// Responsive menu for details see mixins/_burger.scss
+	// width, height, gutter, color, border radius, transition duration
+	@include burger(30px,5px,3px,$brand-primary,3px,.3s); 
+	@include media(screen-md) {display:none; visibility:hidden;}
+	
+	position:absolute; right:20px; top:20px;
+	
+	&.active {
+		@include burger-to-cross;
+	}
+	
+}
+
+// MAIN
+// -------------------------
+.main {}
+.page-header {
+	margin-top:0 !important; border-bottom-color:#ddd !important;
+	h1 {margin-top:0 !important;}
+	p.secondary-header {
+		font-size:1.563em !important; line-height:normal !important; font-weight:600 !important;
+		margin-bottom:1em !important; padding-right:5.5em !important; color:$brand-primary !important;
+	}
+}
+
+// POSTS
+// -------------------------
+.hentry header { }
+.hentry time { }
+.hentry .byline { }
+.hentry .entry-content { }
+.hentry footer { }
+
+
+
+// SIDEBAR
+// -------------------------
+[class^="sidebar"],
+[class*=" sidebar"] {
+	background:#fff;
+	padding-top:1em;
+	
+	h2, h3, h4, h5 {
+		&:first-child {margin-top:0;}
+	}
+	h3 {text-transform:uppercase;}
+	
+	a[href^="mailto"] {word-break:break-word;}
+	
+	.module {
+		font-size:1em;
+		
+		& > div {
+			border-bottom: 4px solid $brand-primary; border-radius:2px;
+			background:#f0f0f0;
+			padding:25px;
+			margin:0 0 1.25em;
+			h3, h2 {
+				font-size:1.3em !important; font-weight:700; text-transform:uppercase; margin:-25px -25px 1em !important; color:$gray;
+				padding:25px;
+				background-color:#ddd;
+			}
+		}
+		.widget-type-post_listing,
+		.widget-type-post_filter {
+			ul {list-style:none; margin:0; padding:0;}
+			ul > li {
+				a {
+					color:#000; padding-top:5px !important; padding-bottom:5px !important;
+					border-bottom:1px solid #ddd;
+				}
+			}
+		}
+			
+	}
+	
+	.hs-menu-wrapper,
+	.widget-module {
+		a {
+			color:$brand-info; @include transition(.2s); padding:10px 12px !important;
+			font-size:18px; display:block;
+			&:hover {color:$brand-primary;}
+			border-bottom:1px solid #ccc;
+		}
+		.hs-menu-children-wrapper {display:none !important;}
+		.active > a,
+		.active .active a {
+			color:$brand-primary;
+		}		
+		.active-branch {
+			&, .hs-menu-item {display:block !important;}
+			
+			&.active > a {}
+			
+			.hs-menu-children-wrapper {
+				visibility:visible !important; opacity:1 !important; display:block !important; position:static !important;				
+				//border-bottom:1px solid @gray-light;
+				& > li {
+					a {
+						color:#000; padding-top:5px !important; padding-bottom:5px !important;
+						border-bottom:1px solid #ddd;
+					}
+				}
+				.active-branch {
+					& > a {font-size:1em; margin-top:0; padding-bottom:7px; color:$brand-primary;}
+				}
+				.hs-menu-children-wrapper {
+					display:none !important;
+					font-size:.875em; border-bottom:1px solid $gray-lighter;
+					background-color:$gray-lighter; margin-top:-1px; padding-bottom:4px !important;
+					a {
+						border-bottom:none; padding-top:3px !important; padding-bottom:3px !important;
+						&:before {content:"-"; display:inline-block; padding-right:3px;}						
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+
+// FOOTER
+// -------------------------
+.content-info {
+	
+}
+
+// UNIQUE ELEMENTS
+// -------------------------
+$billboard-auto-height: auto;
+$billboard-sm-height: 25em;
+$billboard-md-height: 28em;
+$billboard-lg-height: 35em;
+$billboard-vh-height: 100vh;
+.billboard-sm,
+.billboard-md,
+.billboard-lg,
+.billboard-vh {
+	position:relative;	
+	&, .vert-content, .full-width-section {height:$billboard-auto-height;}
+	.full-width-section {
+		z-index:1;
+		.row-fluid-wrapper,
+		.row-fluid {height:100%;}
+	}	
+}
+.billboard-sm {
+	@include media(screen-sm) {
+		&, .vert-content, .full-width-section {height:$billboard-sm-height;}	
+	}
+}
+.billboard-md {
+	@include media(screen-sm) {
+		&, .vert-content, .full-width-section {height:$billboard-md-height;}	
+	}
+}
+.billboard-lg {	
+	@include media(screen-sm) {
+		&, .vert-content, .full-width-section {height:$billboard-lg-height;}	
+	}
+}
+
+.billboard-content {
+	
+}
+.billboard-image {
+	position:absolute; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden;
+	background-repeat:no-repeat; background-position:center center; background-size:cover;
+}
+
+
+// UNIQUE PAGE STYLES
+// -------------------------
+.home {
+	
+}
+.interior-page {
+	
+}
+.landing-page {
+	
+}
+.blog {
+	
+}
