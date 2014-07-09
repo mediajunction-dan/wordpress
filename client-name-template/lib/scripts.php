@@ -23,9 +23,9 @@ function roots_scripts() {
     $get_assets = file_get_contents(get_template_directory() . '/assets/manifest.json');
     $assets     = json_decode($get_assets, true);
     $assets     = array(
-      'css'       => '/assets/css/main.min.css' . '?' . $assets['assets/css/main.min.css']['hash'],      
-      'modernizr' => '/assets/js/vendor/modernizr.min.js',
-      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'
+      'css'       => '/assets/css/main.css' . '?' . $assets['assets/css/main.css']['hash'],      
+      'modernizr' => '/assets/js/vendor/modernizr.js',
+      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js'
     );
   } else {
     $assets = array(

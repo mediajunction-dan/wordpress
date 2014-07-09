@@ -53,12 +53,12 @@ $font-size-base:          16px !default;
 $font-size-large:         18px !default;
 $font-size-small:         12px !default;
 
-$font-size-h1:            2.5em !default; 	// 40px
-$font-size-h2:            1.875em !default; // 36px
-$font-size-h3:            1.5em !default; 	// 24px
-$font-size-h4:            1.25em !default; 	// 20px
-$font-size-h5:            1em !default; 	// 16px
-$font-size-h6:            .875em !default;	// 14px
+$font-size-h1:            40 !default; 	// 40px
+$font-size-h2:            36 !default; // 36px
+$font-size-h3:            24 !default; 	// 24px
+$font-size-h4:            20 !default; 	// 20px
+$font-size-h5:            16 !default; 	// 16px
+$font-size-h6:            14 !default;	// 14px
 
 
 //** Unit-less `line-height` for use in components like buttons.
@@ -851,9 +851,9 @@ $hr-border:                   $gray-lighter !default;
 //== Custom Variables
 $responsive-sheet-width:		$screen-lg-min; // 1200px
 
-$section-padding-lg:			5.625em; // 90px
-$section-padding-md:			3.125em; // 50px
-$section-padding-sm:			2.188em; // 35px
+$section-padding-lg:			90; // 90px
+$section-padding-md:			50; // 50px
+$section-padding-sm:			35; // 35px
 $section-padding-xs:			20px;   // 20px
 
 $padded-content-lg:				7.5%; 

@@ -11,20 +11,20 @@
 .section-padding-bottom-no {padding-bottom:0 !important;}
 
 .section-padding-lg {
-	padding-top:$section-padding-sm;
-	padding-bottom:$section-padding-sm;
+	padding-top:em($section-padding-sm);
+	padding-bottom:em($section-padding-sm);
 	
 	@include media(screen-sm) {
-		padding-top:$section-padding-sm;
-		padding-bottom:$section-padding-sm;
+		padding-top:em($section-padding-sm);
+		padding-bottom:em($section-padding-sm);
 	}
 	@include media(screen-md) {
-		padding-top:$section-padding-md;
-		padding-bottom:$section-padding-md;
+		padding-top:em($section-padding-md);
+		padding-bottom:em($section-padding-md);
 	}
 	@include media(screen-lg) {
-		padding-top:$section-padding-lg;
-		padding-bottom:$section-padding-lg;
+		padding-top:em($section-padding-lg);
+		padding-bottom:em($section-padding-lg);
 	}	
 }
 .section-padding-md {
@@ -32,16 +32,16 @@
 	padding-bottom:$section-padding-xs;
 	
 	@include media(screen-sm) {
-		padding-top:$section-padding-sm;
-		padding-bottom:$section-padding-sm;
+		padding-top:em($section-padding-sm);
+		padding-bottom:em($section-padding-sm);
 	}
 	@include media(screen-md) {
-		padding-top:$section-padding-md;
-		padding-bottom:$section-padding-md;
+		padding-top:em($section-padding-md);
+		padding-bottom:em($section-padding-md);
 	}
 	@include media(screen-lg) {
-		padding-top:$section-padding-md;
-		padding-bottom:$section-padding-md;
+		padding-top:em($section-padding-md);
+		padding-bottom:em($section-padding-md);
 	}	
 }
 .section-padding-sm {
@@ -49,16 +49,16 @@
 	padding-bottom:$section-padding-xs;
 	
 	@include media(screen-sm) {
-		padding-top:$section-padding-sm;
-		padding-bottom:$section-padding-sm;
+		padding-top:em($section-padding-sm);
+		padding-bottom:em($section-padding-sm);
 	}
 	@include media(screen-md) {
-		padding-top:$section-padding-sm;
-		padding-bottom:$section-padding-sm;
+		padding-top:em($section-padding-sm);
+		padding-bottom:em($section-padding-sm);
 	}
 	@include media(screen-lg) {
-		padding-top:$section-padding-sm;
-		padding-bottom:$section-padding-sm;
+		padding-top:em($section-padding-sm);
+		padding-bottom:em($section-padding-sm);
 	}	
 }
 .section-padding-xs {
